@@ -1,16 +1,382 @@
+@import 'config';
+* {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.inner {
+  margin: auto;
+  @include pc {
+    width: 1080px;
+  }
+  @include sp {
+    width: 90vw;
+  }
+}
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 100;
   &_nav {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding-right: 20px;
+    @include pc {
+      justify-content: flex-end;
+      padding-right: 20px;
+      height: 50px;
+    }
+    @include sp {
+      display: none;
+      justify-content: space-around;
+      height: 10vw;
+    }
   }
   &_link {
     font-size: 14px;
+    &:hover {
+      opacity: .7;
+    }
+    @include sp {
+      font-size: 3.12vw;
+    }
+    &:nth-child(n+2) {
+      @include pc {
+        margin-left: 36px;
+      }
+    }
+  }
+}
+.main {
+  &_mv {
+    position: relative;
+  }
+  &_logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    @include pc {
+      top: 50px;
+      left: 50px;
+    }
+    @include sp {
+      top: 3vw;
+      left: 0vw;
+    }
+    &_img {
+      @include pc {
+        flex-basis: 75px;
+        width: 75px;
+      }
+      @include sp {
+        flex-basis: 15vw;
+        width: 15vw;
+      }
+    }
+    &_txt {
+      font-family: Georgia;
+      font-style: italic;
+      color: #fff;
+      @include pc {
+        font-size: 50px;
+      }
+      @include sp {
+        font-size: 7vw;
+      }
+    }
+  }
+}
+.idea {
+  @include pc {
+    padding: 100px 0 130px;
+  }
+  @include sp {
+    padding: 10vw 0 20vw;
+  }
+  &_ttl {
+    @include pc {
+      font-size: 38px;
+    }
+    @include sp {
+      font-size: 5vw;
+    }
+  }
+  &_lead {
+    @include pc {
+      line-height: 5;
+      font-size: 20px;
+      margin-top: 100px;
+    }
+    @include sp {
+      line-height: 2;
+      font-size: 3vw;
+      margin-top: 10vw;
+    }
+  }
+}
+.about {
+  &_ttl {
+    background: #48D9F6;
+    box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+    @include pc {
+      height: 100px;
+      line-height: 100px;
+      padding-left: 180px;
+      font-size: 36px;
+    }
+    @include sp {
+      height: 20vw;
+      line-height: 20vw;
+      padding-left: 5vw;
+      font-size: 5vw;
+    }
+  }
+}
+.talkSection {
+  @include pc {
+    padding: 90px 0 190px;
+  }
+  @include sp {
+    padding: 10vw 0 25vw;
+  }
+  &_date {
+    background: rgba($color: #CEDAF7, $alpha: .7);
+    display: block;
+    line-height: 1;
+    color: #707070;
+    margin: auto;
+    text-align: center;
+    border-radius: 16px;
+    @include pc {
+      padding: 15px 0;
+      font-size: 24px;
+      width: 200px;
+    }
+    @include sp {
+      padding: 1.5vw 0;
+      font-size: 3vw;
+      width: 25vw;
+    }
+  }
+  &_talk {
+    margin: auto;
+    @include pc {
+      margin-top: 50px;
+      width: 1340px;
+    }
+    @include sp {
+      margin-top: 5vw;
+      width: 90vw;
+    }
+    &_item {
+      background: #48D9F6;
+      position: relative;
+      box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        @include pc {
+          top: 60px;
+          left: -50px;
+          border-top: 50px solid transparent;
+          border-right: 100px solid #48D9F6;
+          border-bottom: 50px solid transparent;
+        }
+        @include sp {
+          top: 10vw;
+          left: -5vw;
+          border-top: 5vw solid transparent;
+          border-right: 10vw solid #48D9F6;
+          border-bottom: 5vw solid transparent;
+        }
+      }
+      &:after {
+        content: "既読";
+        display: block;
+        position: absolute;
+        line-height: 1;
+        color: #888;
+        @include pc {
+          bottom: 0;
+          right: -40px;
+          font-size: 18px;
+        }
+        @include sp {
+          bottom: 0;
+          right: -5vw;
+          font-size: 3vw;
+        }
+      }
+      &-right {
+        @extend .talkSection_talk_item;
+        margin-left: auto;
+        background: #FBFF9B;
+        &:before {
+          left: auto;
+          border-right: none;
+          @include pc {
+            right: -50px;
+            border-left: 100px solid #FBFF9B;
+          }
+          @include sp {
+            right: -5vw;
+            border-left: 10vw solid #FBFF9B;
+          }
+        }
+        &:after {
+          right: auto;
+          @include pc {
+            left: -55px;
+          }
+          @include sp {
+            left: -5vw;
+          }
+        }
+      }
+      @include pc {
+        width: 975px;
+        border-radius: 50px;
+        padding: 50px 130px;
+        font-size: 24px;
+        line-height: 2.5;
+      }
+      @include sp {
+        width: 75vw;
+        border-radius: 10vw;
+        padding: 5vw 5vw;
+        font-size: 4vw;
+        line-height: 1.5;
+      }
+      &:nth-child(n+2) {
+        @include pc {
+          margin-top: 90px;
+        }
+        @include sp {
+          margin-top: 10vw;
+        }
+      }
+    }
+  }
+}
+.contact {
+  background: #48D9F6;
+  text-align: center;
+  @include pc {
+    padding: 50px 0 100px;
+  }
+  @include sp {
+    padding: 5vw 0 10vw;
+  }
+  &_ttl {
+    @include pc {
+      font-size: 28px;
+    }
+    @include sp {
+      font-size: 5vw;
+    }
+  }
+  &_row {
+    display: flex;
+    justify-content: space-between;
+    @include pc {
+      margin-top: 50px;
+    }
+    @include sp {
+      margin-top: 5vw;
+    }
+  }
+  &_btn {
+    background: #FBFF9B;
+    box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+    &:hover {
+      cursor: pointer;
+      transform: translateY(5px);
+    }
+    @include pc {
+      border-radius: 50px;
+      width: 450px;
+      height: 100px;
+      font-size: 50px;
+    }
+    @include sp {
+      border-radius: 10vw;
+      width: 40vw;
+      height: 15vw;
+      font-size: 4vw;
+    }
+  }
+}
+.info {
+  @include pc {
+    padding: 85px 0 75px;
+  }
+  @include sp {
+    padding: 7vw 0 5vw;
+  }
+  &_ttl {
+    text-align: center;
+    @include pc {
+      font-size: 28px;
+    }
+    @include sp {
+      font-size: 5vw;
+    }
+  }
+  &_row {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    @include pc {
+      width: 800px;
+      padding-top: 75px;
+    }
+    @include sp {
+      width: 90vw;
+      padding-top: 7vw;
+    }
+  }
+  table {
+    @include pc {
+      width: 350px;
+    }
+    @include sp {
+      width: 40vw;
+    }
+    th {
+      width: 35%;
+      padding-bottom: 10%;
+    }
+    td {
+      padding-bottom: 10%;
+    }
+  }
+  &_map {
+    @include pc {
+      width: 400px;
+      height: 350px;
+    }
+    @include sp {
+      width: 40vw;
+      height: 35vw;
+    }
+  }
+}
+.footer {
+  text-align: right;
+  box-shadow: 0 -1.5px 3px rgba($color: #000000, $alpha: .16);
+  @include pc {
+    padding: 50px 40px 5px;
+  }
+  @include sp {
+    padding: 6vw 5vw 2vw;
+  }
+  &_txt {
+    @include pc {
+      font-size: 18px;
+    }
+    @include sp {
+      font-size: 3vw;
+    }
   }
 }
