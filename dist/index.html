@@ -12,14 +12,65 @@
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
+    <div class="spMenue" id="spMenu">
+      <div class="spMenue_content" id="spMenuWrap">
+        <nav class="spMenue_nav">
+          <a class="spMenue_link" href="#section_idea">経営理念</a>
+          <a class="spMenue_link" href="#section_about">会社紹介</a>
+          <a class="spMenue_link" href="#section_works">事業内容</a>
+          <a class="spMenue_link" href="#section_contact">お問い合わせ</a>
+        </nav>
+      </div>
+    </div>
     <header class="header">
       <nav class="header_nav">
         <a class="header_link" href="#section_idea">経営理念</a>
         <a class="header_link" href="#section_about">会社紹介</a>
-        <a class="header_link" href="#">事業内容</a>
-        <a class="header_link" href="#">会社概要</a>
-        <a class="header_link" href="#">お問い合わせ</a>
+        <a class="header_link" href="#section_works">事業内容</a>
+        <a class="header_link" href="#section_contact">お問い合わせ</a>
       </nav>
+      <div id="humberger" class="humberger">
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 250.579 250.579" style="enable-background:new 0 0 250.579 250.579;" xml:space="preserve">
+          <g id="Menu">
+            <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M22.373,76.068h205.832c12.356,0,22.374-10.017,22.374-22.373
+              c0-12.356-10.017-22.373-22.374-22.373H22.373C10.017,31.323,0,41.339,0,53.696C0,66.052,10.017,76.068,22.373,76.068z
+              M228.205,102.916H22.373C10.017,102.916,0,112.933,0,125.289c0,12.357,10.017,22.373,22.373,22.373h205.832
+              c12.356,0,22.374-10.016,22.374-22.373C250.579,112.933,240.561,102.916,228.205,102.916z M228.205,174.51H22.373
+              C10.017,174.51,0,184.526,0,196.883c0,12.356,10.017,22.373,22.373,22.373h205.832c12.356,0,22.374-10.017,22.374-22.373
+              C250.579,184.526,240.561,174.51,228.205,174.51z"/>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+        </svg>
+      </div>
     </header>
     <main class="main">
       <div class="main_mv">
@@ -38,7 +89,7 @@
       <div id="section_about" class="about">
         <p class="about_ttl">会社紹介</p>
         <div class="talkSection">
-          <div class="talkSection_date">2021/04/24</div>
+          <div id="js-date-txt" class="talkSection_date">-</div>
           <div class="talkSection_talk">
             <div class="talkSection_talk_item">
               <span>株式会社Asovi</span>では<br>
@@ -58,11 +109,18 @@
           </div>
         </div>
       </div>
+      <div id="section_works" class="works">
+        <p class="works_ttl">事業内容</p>
+        <div class="works_row">
+          <img class="works_row_img" src="./img/img_under_construction.png" alt="工事中">
+          <p class="works_txt">ただいま工事中です。</p>
+        </div>
+      </div>
       <div id="section_contact" class="contact">
         <p class="contact_ttl">お問い合わせ</p>
-        <div class="contact_row inner">
-          <button class="contact_btn">TEL</button>
-          <button class="contact_btn">お問い合わせ</button>
+        <div class="contact_row">
+          <a href="tel:08033881819" class="contact_btn">TEL</a>
+          <a href="mailto:info@asovigroup.co.jp" class="contact_btn">お問い合わせ</a>
         </div>
       </div>
       <div id="section_info" class="info">
@@ -89,4 +147,6 @@
       <p class="footer_txt">株式会社Asovi</p>
     </footer>
   </body>
+  <script src="./js/jquery-3.4.0.min.js"></script>
+  <script src="./js/main.js"></script>
 </html>

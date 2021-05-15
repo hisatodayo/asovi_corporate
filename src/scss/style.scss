@@ -17,6 +17,12 @@
   left: 0;
   right: 0;
   z-index: 100;
+  @include pc {
+    background: rgba($color: #48D9F6, $alpha: .3);
+  }
+  @include sp {
+    padding: 3vw;
+  }
   &_nav {
     width: 100%;
     display: flex;
@@ -162,7 +168,7 @@
     margin: auto;
     @include pc {
       margin-top: 50px;
-      width: 1340px;
+      width: 93vw;
     }
     @include sp {
       margin-top: 5vw;
@@ -235,7 +241,7 @@
         }
       }
       @include pc {
-        width: 975px;
+        width: 72.76vw;
         border-radius: 50px;
         padding: 50px 130px;
         font-size: 24px;
@@ -278,9 +284,10 @@
   }
   &_row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     @include pc {
-      margin-top: 50px;
+      width: 500px;
+      margin: 50px auto 0;
     }
     @include sp {
       margin-top: 5vw;
@@ -295,15 +302,17 @@
     }
     @include pc {
       border-radius: 50px;
-      width: 450px;
-      height: 100px;
-      font-size: 50px;
+      width: 200px;
+      height: 50px;
+      font-size: 24px;
+      line-height: 50px;
     }
     @include sp {
       border-radius: 10vw;
       width: 40vw;
       height: 15vw;
       font-size: 4vw;
+      line-height: 15vw;
     }
   }
 }
@@ -334,6 +343,8 @@
     @include sp {
       width: 90vw;
       padding-top: 7vw;
+      flex-direction: column;
+      align-items: center;
     }
   }
   table {
@@ -341,14 +352,24 @@
       width: 350px;
     }
     @include sp {
-      width: 40vw;
+      width: 80vw;
     }
     th {
       width: 35%;
-      padding-bottom: 10%;
+      @include pc {
+        padding-bottom: 10%;
+      }
+      @include sp {
+        padding-bottom: 5%;
+      }
     }
     td {
-      padding-bottom: 10%;
+      @include pc {
+        padding-bottom: 10%;
+      }
+      @include sp {
+        padding-bottom: 5%;
+      }
     }
   }
   &_map {
@@ -357,8 +378,9 @@
       height: 350px;
     }
     @include sp {
-      width: 40vw;
-      height: 35vw;
+      width: 80vw;
+      height: 50vw;
+      margin-top: 10vw;
     }
   }
 }
@@ -377,6 +399,107 @@
     }
     @include sp {
       font-size: 3vw;
+    }
+  }
+}
+.humberger {
+  @include pc {
+    display: none;
+  }
+  z-index: 20;
+  width: 8vw;
+  height: 8vw;
+  padding: 1vw;
+  background: #fff;
+  border-radius: 4px;
+  margin-left: auto;
+  svg {
+    width: 100%;
+    fill: #48D9F6;
+  }
+}
+.spMenue {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba($color: #000000, $alpha: .3);
+  &_link {
+    font-family: 'Noto Sans JP', sans-serif;
+    display: block;
+    padding: 2vw 4vw;
+    background: #48D9F6;
+    text-align: right;
+  }
+  &.active {
+    display: block;
+    .spMenue_content {
+      right: 0;
+    }
+  }
+  &_content {
+    position: absolute;
+    width: 50vw;
+    background: #fff;
+    padding: 15vw 0;
+    box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+    transition: all ease .5s;
+    right: -100%;
+    border-radius: 16px 0 0 16px;
+  }
+}
+.works {
+  text-align: center;
+  box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16) inset;
+  background: #FFE886;
+  @include pc {
+    padding: 50px 0 100px;
+  }
+  @include sp {
+    padding: 10vw 0;
+  }
+  &_ttl {
+    @include pc {
+      font-size: 28px;
+    }
+    @include sp {
+      font-size: 5vw;
+    }
+  }
+  &_txt {
+    font-weight: bold;
+    @include pc {
+      font-size: 20px;
+    }
+    @include sp {
+      font-size: 5vw;
+      margin-top: 5vw;
+    }
+  }
+  &_row {
+    display: flex;
+    align-items: center;
+    @include pc {
+      justify-content: space-between;
+      width: 450px;
+      margin: 50px auto 0;
+    }
+    @include sp {
+      flex-direction: column;
+      margin-top: 5vw;
+    }
+    &_img {
+      @include pc {
+        width: 200px;
+      }
+      @include sp {
+        width: 50vw;
+      }
     }
   }
 }
