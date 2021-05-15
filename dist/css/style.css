@@ -303,7 +303,7 @@
   }
 }
 
-.talkSection_talk_item:after, .talkSection_talk_item-right:after {
+.talkSection_talk_item.read:after, .read.talkSection_talk_item-right:after {
   content: "既読";
   display: block;
   position: absolute;
@@ -312,7 +312,7 @@
 }
 
 @media screen and (min-width: 769px) {
-  .talkSection_talk_item:after, .talkSection_talk_item-right:after {
+  .talkSection_talk_item.read:after, .read.talkSection_talk_item-right:after {
     bottom: 0;
     right: -40px;
     font-size: 18px;
@@ -320,7 +320,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .talkSection_talk_item:after, .talkSection_talk_item-right:after {
+  .talkSection_talk_item.read:after, .read.talkSection_talk_item-right:after {
     bottom: 0;
     right: -5vw;
     font-size: 3vw;
