@@ -2,6 +2,26 @@
 * {
   font-family: 'Noto Sans JP', sans-serif;
 }
+%section_ttl {
+  position: relative;
+  &:after {
+    content: "";
+    background: #008080;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+    @include pc {
+      width: 150px;
+      height: 1px;
+    }
+    @include sp {
+      width: 30vw;
+      height: .05vw;
+    }
+  }
+}
 .inner {
   margin: auto;
   @include pc {
@@ -93,6 +113,8 @@
   }
 }
 .idea {
+  text-align: center;
+  font-family: serif;
   @include pc {
     padding: 100px 0 130px;
   }
@@ -121,29 +143,40 @@
   }
 }
 .about {
+  background: #48D9F6;
+  @include pc {
+    padding: 50px 0 100px;
+  }
   &_ttl {
-    background: #48D9F6;
-    box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+    background: #FFFFDD;
     @include pc {
-      height: 100px;
-      line-height: 100px;
-      padding-left: 180px;
-      font-size: 36px;
+      font-size: 26px;
+      height: 50px;
+      line-height: 50px;
+      padding-left: 50px;
+      margin-bottom: 25px;
     }
     @include sp {
-      height: 20vw;
-      line-height: 20vw;
-      padding-left: 5vw;
       font-size: 5vw;
+      line-height: 15vw;
+      height: 15vw;
+      padding-left: 5vw;
+      margin-bottom: 5vw;
     }
   }
 }
 .talkSection {
+  background: #fff;
+  box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+  overflow: hidden;
   @include pc {
-    padding: 90px 0 190px;
+    padding: 0 0 190px;
+    width: 800px;
+    margin: auto;
+    border-radius: 50px;
   }
   @include sp {
-    padding: 10vw 0 25vw;
+    padding: 0 0 25vw;
   }
   &_date {
     background: rgba($color: #CEDAF7, $alpha: .7);
@@ -168,7 +201,7 @@
     margin: auto;
     @include pc {
       margin-top: 50px;
-      width: 93vw;
+      padding: 0 50px;
     }
     @include sp {
       margin-top: 5vw;
@@ -220,6 +253,7 @@
         @extend .talkSection_talk_item;
         margin-left: auto;
         background: #FBFF9B;
+        text-align: right;
         &:before {
           left: auto;
           border-right: none;
@@ -243,9 +277,9 @@
         }
       }
       @include pc {
-        width: 72.76vw;
+        width: 70%;
         border-radius: 50px;
-        padding: 50px 130px;
+        padding: 50px;
         font-size: 24px;
         line-height: 2.5;
       }
@@ -271,12 +305,13 @@
   background: #48D9F6;
   text-align: center;
   @include pc {
-    padding: 50px 0 100px;
+    padding: 25px 0 50px;
   }
   @include sp {
     padding: 5vw 0 10vw;
   }
   &_ttl {
+    @extend %section_ttl;
     @include pc {
       font-size: 28px;
     }
@@ -312,9 +347,9 @@
     @include sp {
       border-radius: 10vw;
       width: 40vw;
-      height: 15vw;
+      height: 10vw;
       font-size: 4vw;
-      line-height: 15vw;
+      line-height: 10vw;
     }
   }
 }
@@ -327,6 +362,7 @@
   }
   &_ttl {
     text-align: center;
+    @extend %section_ttl;
     @include pc {
       font-size: 28px;
     }
@@ -339,7 +375,7 @@
     justify-content: space-around;
     margin: auto;
     @include pc {
-      width: 800px;
+      width: 900px;
       padding-top: 75px;
     }
     @include sp {
@@ -351,26 +387,35 @@
   }
   table {
     @include pc {
-      width: 350px;
+      width: 450px;
     }
     @include sp {
       width: 80vw;
     }
     th {
       width: 35%;
+      vertical-align: top;
       @include pc {
         padding-bottom: 10%;
       }
       @include sp {
         padding-bottom: 5%;
+        font-size: 3.5vw;
       }
     }
     td {
+      line-height: 1.5;
       @include pc {
         padding-bottom: 10%;
       }
       @include sp {
         padding-bottom: 5%;
+        font-size: 3.5vw;
+      }
+    }
+    tr:nth-child(4) td {
+      @include sp {
+        font-size: 3vw;
       }
     }
   }
@@ -460,12 +505,13 @@
   box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16) inset;
   background: #FFE886;
   @include pc {
-    padding: 50px 0 100px;
+    padding: 50px 0 0;
   }
   @include sp {
-    padding: 10vw 0;
+    padding: 10vw 0 0;
   }
   &_ttl {
+    @extend %section_ttl;
     @include pc {
       font-size: 28px;
     }
@@ -501,6 +547,168 @@
       }
       @include sp {
         width: 50vw;
+      }
+    }
+  }
+  &_inner {
+    @include pc {
+      padding-top: 100px;
+    }
+    @include sp {
+      padding-top: 10vw;
+    }
+  }
+  &_item {
+    @include pc {
+      display: flex;
+    }
+    &:nth-child(n+2) {
+      @include sp {
+        .works_item_lead {
+          padding-top: 10vw;
+        }
+      }
+    }
+    &-right {
+      @extend .works_item;
+      @include pc {
+        flex-direction: row-reverse;
+      }
+      .works_item_lead {
+        background: #48D9F6;
+        @include pc {
+          padding: 50px 100px 0 50px;
+        }
+      }
+    }
+    &_lead {
+      text-align: left;
+      @include pc {
+        padding: 50px 0 0 100px;
+        width: 50%;
+        flex-basis: 50%;
+      }
+      @include sp {
+        padding: 5vw 0 10vw 5vw;
+      }
+      &_ttl {
+        font-weight: bold;
+        position: relative;
+        @include pc {
+          font-size: 26px;
+          padding-bottom: 25px;
+        }
+        @include sp {
+          font-size: 5vw;
+          padding-bottom: 5vw;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100px;
+          height: 1px;
+          bottom: 0;
+          left: 0;
+          background: #000;
+        }
+        &-sub {
+          font-weight: normal;
+          display: block;
+          @include pc {
+            font-size: 18px;
+            margin-top: 10px;
+          }
+          @include sp {
+            font-size: 3vw;
+            margin-top: 3vw;
+          }
+        }
+      }
+      &_lead {
+        width: 90%;
+        line-height: 1.5;
+        @include pc {
+          margin-top: 50px;
+          font-size: 18px;
+        }
+        @include sp {
+          margin-top: 10vw;
+          font-size: 4vw;
+        }
+      }
+    }
+    &_img {
+      @include pc {
+        width: 50%;
+        flex-basis: 50%;
+      }
+      img {
+        display: block;
+      }
+    }
+  }
+}
+.history {
+  position: relative;
+  &_bg {
+    display: block;
+    @include sp {
+      display: none;
+    }
+  }
+  @include sp {
+    padding: 10vw 5vw;
+    background: url('/img/history.jpg')center / cover;
+  }
+  &_content {
+    background: #fff;
+    @include pc {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &_ttl {
+      text-align: center;
+      color: #fff;
+      background: #000;
+      @include pc {
+        height: 100px;
+        line-height: 100px;
+      }
+      @include sp {
+        height: 8vw;
+        line-height: 8vw;
+      }
+    }
+    &_tableWrap {
+      @include pc {
+        padding: 25px 50px 100px;
+      }
+      @include sp {
+        padding: 3vw 5vw 10vw;
+      }
+    }
+    &_table {
+      margin: auto;
+      th,td {
+        border-bottom: 1px solid #000;
+        @include pc {
+          padding: 25px 0;
+          font-size: 14px;
+        }
+        @include sp {
+          padding: 5vw 0;
+          font-size: 3vw;
+        }
+      }
+      th {
+        @include pc {
+          padding-right: 25px;
+        }
+        @include sp {
+          padding-right: 5vw;
+        }
       }
     }
   }
