@@ -385,7 +385,6 @@
 .talkSection_talk_item-right {
   margin-left: auto;
   background: #FBFF9B;
-  text-align: right;
 }
 
 .talkSection_talk_item-right:before {
@@ -886,7 +885,7 @@
 
 @media screen and (min-width: 769px) {
   .works_item-right .works_item_lead {
-    padding: 50px 100px 0 50px;
+    padding: 25px 100px 0 50px;
   }
 }
 
@@ -896,7 +895,7 @@
 
 @media screen and (min-width: 769px) {
   .works_item_lead {
-    padding: 50px 0 0 100px;
+    padding: 25px 0 0 100px;
     width: 50%;
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
@@ -964,15 +963,15 @@
 
 @media screen and (min-width: 769px) {
   .works_item_lead_lead {
-    margin-top: 50px;
-    font-size: 18px;
+    margin-top: 2.4vw;
+    font-size: .9vw;
   }
 }
 
 @media screen and (max-width: 768px) {
   .works_item_lead_lead {
     margin-top: 10vw;
-    font-size: 4vw;
+    font-size: 3vw;
   }
 }
 

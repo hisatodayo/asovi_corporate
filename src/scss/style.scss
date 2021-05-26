@@ -253,7 +253,6 @@
         @extend .talkSection_talk_item;
         margin-left: auto;
         background: #FBFF9B;
-        text-align: right;
         &:before {
           left: auto;
           border-right: none;
@@ -577,14 +576,14 @@
       .works_item_lead {
         background: #48D9F6;
         @include pc {
-          padding: 50px 100px 0 50px;
+          padding: 25px 100px 0 50px;
         }
       }
     }
     &_lead {
       text-align: left;
       @include pc {
-        padding: 50px 0 0 100px;
+        padding: 25px 0 0 100px;
         width: 50%;
         flex-basis: 50%;
       }
@@ -628,12 +627,12 @@
         width: 90%;
         line-height: 1.5;
         @include pc {
-          margin-top: 50px;
-          font-size: 18px;
+          margin-top: 2.4vw;
+          font-size: .9vw;
         }
         @include sp {
           margin-top: 10vw;
-          font-size: 4vw;
+          font-size: 3vw;
         }
       }
     }
